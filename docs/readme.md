@@ -38,7 +38,8 @@ Nginx build variables and paths:
 This image is based on Ubuntu:14.04 official image.
 
 ## Full featured NGINX configuration using Google Page Speed
-This can be placed on ```/some/config/nginx.conf``` on host or ```/etc/nginx/nginx.conf``` on container.
+This is an example Nginx configuration file, you can placed it on ```/some/config/nginx.conf``` on your host OR ```/etc/nginx/nginx.conf``` on container.
+This example use a virtualpath /v2/ as proxy.
 ```
 #user  nobody;
 worker_processes  1;
