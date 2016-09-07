@@ -1,0 +1,1 @@
+docker push luizcarlosfaria/nginx-pagespeed:latest
