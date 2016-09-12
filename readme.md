@@ -3,7 +3,7 @@
 * [```nginx-1.10.1--pagespeed-1.11.33.3```](https://github.com/docker-gallery/nginx-pagespeed/blob/master/Dockerfile), [```latest```](https://github.com/docker-gallery/nginx-pagespeed/blob/master/Dockerfile) [(Dockerfile)](https://github.com/docker-gallery/nginx-pagespeed/blob/master/Dockerfile)
 
 ## Include
-This image contains Nginx built with modules:
+This image contains Nginx built with some modules:
 * Nginx 1.10.1
 * ngx_http_substitutions_filter_module
 * Google Page Speed  1.11.33.3
@@ -18,7 +18,8 @@ docker run --name customNginx -d --hostname customNginx -p 80:80 -v /some/config
 * "/etc/nginx/" - Configuration files
 * "/var/log/nginx/" - Logs
 
-Nginx build variables and paths:
+## Build paths and variables
+Nginx has built with those variables and paths:
 ```
 #  nginx path prefix: "/usr/local/nginx"
 #  nginx binary file: "/usr/local/sbin/nginx"
@@ -40,6 +41,9 @@ This image is based on Ubuntu:14.04 official image.
 ## Full featured NGINX configuration using Google Page Speed
 This is an example Nginx configuration file, you can placed it on ```/some/config/nginx.conf``` on your host OR ```/etc/nginx/nginx.conf``` on container.
 This example use a virtualpath /v2/ as proxy.
+
+See morre on [PageSpeed Tools](https://developers.google.com/speed/pagespeed/module/filter-head-add) docs.
+
 ```
 #user  nobody;
 worker_processes  1;
