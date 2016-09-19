@@ -4,9 +4,10 @@
 
 ## Include
 This image contains Nginx built with some modules:
-* Nginx 1.10.1
+* Nginx 1.11.4
 * ngx_http_substitutions_filter_module
 * Google Page Speed  1.11.33.3
+* nginx-rtmp-module 1.1.9
 
 ## How to use this image
 
@@ -42,7 +43,9 @@ This image is based on Ubuntu:14.04 official image.
 This is an example Nginx configuration file, you can placed it on ```/some/config/nginx.conf``` on your host OR ```/etc/nginx/nginx.conf``` on container.
 This example use a virtualpath /v2/ as proxy.
 
-See morre on [PageSpeed Tools](https://developers.google.com/speed/pagespeed/module/filter-head-add) docs.
+See morre on [PageSpeed Tools](https://developers.google.com/speed/pagespeed/module/filter-head-add) docs, 
+[nginx-rtmp-module](https://github.com/arut/nginx-rtmp-module) docs and 
+[ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module) docs.
 
 ```
 #user  nobody;
