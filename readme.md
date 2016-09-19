@@ -1,6 +1,7 @@
 # Supported tags and respective ```Dockerfile``` links
 
-* [```nginx-1.10.1--pagespeed-1.11.33.3```](https://github.com/docker-gallery/nginx-pagespeed/blob/master/Dockerfile), [```latest```](https://github.com/docker-gallery/nginx-pagespeed/blob/master/Dockerfile) [(Dockerfile)](https://github.com/docker-gallery/nginx-pagespeed/blob/master/Dockerfile)
+* [```nginx-1.11.4--pagespeed-1.11.33.3--RTMP-1.1.9```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.11.4--pagespeed-1.11.33.3--RTMP-1.1.9), ```latest```
+* [```nginx-1.10.1--pagespeed-1.11.33.3```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.10.1--pagespeed-1.11.33.3)
 
 ## Include
 This image contains Nginx built with some modules:
