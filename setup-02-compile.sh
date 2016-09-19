@@ -5,17 +5,23 @@ sudo mkdir /home/build
 cd /home/build/
 echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
 # Download ngx_http_substitutions_filter_module
-sudo git clone git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
-echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
+    sudo git clone git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
+    echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
+#Dowload do nginx-rtmp-module
+    wget "https://github.com/arut/nginx-rtmp-module/archive/v${RTMP_VERSION}.tar.gz" \
+    && tar -xzvf v${RTMP_VERSION}.tar.gz  # extracts RTM/ 
+    echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
 # Download Google Page Speed
-echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
-wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip -O release-${NPS_VERSION}-beta.zip
-unzip release-${NPS_VERSION}-beta.zip
-cd /home/build/ngx_pagespeed-release-${NPS_VERSION}-beta/
-echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
-wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz \
-&& tar -xzvf ${NPS_VERSION}.tar.gz  # extracts to psol/ 
-echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
+    echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
+    wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip -O release-${NPS_VERSION}-beta.zip
+    unzip release-${NPS_VERSION}-beta.zip
+    cd /home/build/ngx_pagespeed-release-${NPS_VERSION}-beta/
+    echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
+    wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz \
+    && tar -xzvf ${NPS_VERSION}.tar.gz  # extracts to psol/ 
+    echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
+
+
 # Download Nginx
 cd /home/build/
 sudo wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
@@ -40,6 +46,7 @@ sudo ./configure \
     --with-http_realip_module \
     --with-http_addition_module \
     --with-http_xslt_module \
+    --with-stream \
     --with-http_image_filter_module \
     --with-http_geoip_module \
     --with-http_sub_module \
@@ -59,8 +66,9 @@ sudo ./configure \
     --with-google_perftools_module \
     --add-module=../ngx_http_substitutions_filter_module \
     --add-module=../ngx_pagespeed-release-${NPS_VERSION}-beta \
-    --with-debug
-
+    --add-module=../nginx-rtmp-module-${RTMP_VERSION} 
+    
+                                    # --with-debug
                                     #Configuration summary
                                     #  + using system PCRE library
                                     #  + using system OpenSSL library
