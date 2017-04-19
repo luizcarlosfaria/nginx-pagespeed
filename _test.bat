@@ -1,9 +1,3 @@
-docker run --name EntryPoint -d --hostname EntryPoint -p 80:80 -v c:/docker/EntryPoint/config:/etc/nginx/ -v  c:/docker/EntryPoint/logs:/var/log/nginx/ luizcarlosfaria/nginx-pagespeed
-docker ps -a --filter "name=EntryPoint"
-timeout 1
-docker ps -a --filter "name=EntryPoint"
-timeout 1
-docker ps -a --filter "name=EntryPoint"
-docker logs EntryPoint
-docker rm EntryPoint
+docker rm -f customNginx
+docker run --name customNginx -d --hostname customNginx -p 80:80 -v %~dp0examples\01-docker.com\nginx.conf:/etc/nginx/nginx.conf -v  %~dp0examples\01-docker.com\logs:/var/log/nginx/ luizcarlosfaria/nginx-pagespeed
 

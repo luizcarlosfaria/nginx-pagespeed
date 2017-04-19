@@ -1,14 +1,15 @@
 # Supported tags and respective ```Dockerfile``` links
 
+* [```nginx-1.11.4--pagespeed-1.11.33.3--RTMP-1.1.11```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.12.0--pagespeed-1.11.33.4--RTMP-1.1.11), ```latest```
 * [```nginx-1.11.4--pagespeed-1.11.33.3--RTMP-1.1.9```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.11.4--pagespeed-1.11.33.3--RTMP-1.1.9), ```latest```
 * [```nginx-1.10.1--pagespeed-1.11.33.3```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.10.1--pagespeed-1.11.33.3)
 
 ## Include
 This image contains Nginx built with some modules:
-* Nginx 1.11.4
+* Nginx 1.12.0
 * ngx_http_substitutions_filter_module
-* Google Page Speed  1.11.33.3
-* nginx-rtmp-module 1.1.9
+* Google Page Speed  1.11.33.4
+* nginx-rtmp-module 1.1.11
 
 ## How to use this image
 
@@ -37,8 +38,8 @@ Nginx has built with those variables and paths:
 #  nginx http scgi temporary files: "scgi_temp"
 ```
 
-## Based on [ubuntu:14.04](https://hub.docker.com/_/ubuntu/) image
-This image is based on Ubuntu:14.04 official image.
+## Based on [ubuntu:17.04](https://hub.docker.com/_/ubuntu/) image
+This image is based on Ubuntu:17.04 official image.
 
 ## Full featured NGINX configuration using Google Page Speed
 This is an example Nginx configuration file, you can placed it on ```/some/config/nginx.conf``` on your host OR ```/etc/nginx/nginx.conf``` on container.
