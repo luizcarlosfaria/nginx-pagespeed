@@ -1,6 +1,6 @@
 # Supported tags and respective ```Dockerfile``` links
 
-* [```nginx-1.11.4--pagespeed-1.11.33.3--RTMP-1.1.11```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.12.0--pagespeed-1.11.33.4--RTMP-1.1.11), ```latest```
+* [```nginx-1.11.4--pagespeed-1.12.0--RTMP-1.1.11```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.12.0--pagespeed-1.11.33.4--RTMP-1.1.11), ```latest```
 * [```nginx-1.11.4--pagespeed-1.11.33.3--RTMP-1.1.9```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.11.4--pagespeed-1.11.33.3--RTMP-1.1.9), ```latest```
 * [```nginx-1.10.1--pagespeed-1.11.33.3```](https://github.com/docker-gallery/nginx-pagespeed/tree/nginx-1.10.1--pagespeed-1.11.33.3)
 
