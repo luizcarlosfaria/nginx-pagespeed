@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-sudo mkdir /home/build
+mkdir /home/build
 cd /home/build/
 echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
 # Download ngx_http_substitutions_filter_module
-    sudo git clone git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
+    git clone git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
     echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
 #Dowload do nginx-rtmp-module
     wget "https://github.com/arut/nginx-rtmp-module/archive/v${RTMP_VERSION}.tar.gz" \
@@ -13,9 +13,9 @@ echo '##########################################################################
     echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
 # Download Google Page Speed
     echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
-    wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip -O release-${NPS_VERSION}-beta.zip
-    unzip release-${NPS_VERSION}-beta.zip
-    cd /home/build/ngx_pagespeed-release-${NPS_VERSION}-beta/
+    wget https://github.com/pagespeed/ngx_pagespeed/archive/v${NPS_VERSION}-beta.zip -O nginx-${NPS_VERSION}-beta.zip
+    unzip nginx-${NPS_VERSION}-beta.zip
+    cd /home/build/ngx_pagespeed-${NPS_VERSION}-beta/
     echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
     wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz \
     && tar -xzvf ${NPS_VERSION}.tar.gz  # extracts to psol/ 
@@ -24,12 +24,12 @@ echo '##########################################################################
 
 # Download Nginx
 cd /home/build/
-sudo wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
-sudo tar -zxvf nginx-${NGINX_VERSION}.tar.gz 
+wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
+tar -zxvf nginx-${NGINX_VERSION}.tar.gz 
 cd /home/build/nginx-${NGINX_VERSION}
 echo '###############################################################################################' && pwd && ls -l && echo '###############################################################################################'
 
-sudo ./configure \
+./configure \
     --prefix=/usr/local/nginx \
     --sbin-path=/usr/local/sbin/nginx \
     --conf-path=/etc/nginx/nginx.conf \
@@ -65,7 +65,7 @@ sudo ./configure \
     --with-pcre \
     --with-google_perftools_module \
     --add-module=../ngx_http_substitutions_filter_module \
-    --add-module=../ngx_pagespeed-release-${NPS_VERSION}-beta \
+    --add-module=../ngx_pagespeed-${NPS_VERSION}-beta \
     --add-module=../nginx-rtmp-module-${RTMP_VERSION} 
     
                                     # --with-debug
@@ -91,12 +91,12 @@ sudo ./configure \
                                     
 
 
-sudo make
-sudo make install
-sudo useradd -r nginx
+make
+make install
+useradd -r nginx
 
 
-sudo apt-get clean \
+apt-get clean \
 && apt-get autoremove -y \
 && rm -rf /var/lib/apt/lists/* \
 && rm -rf /home/build/*
